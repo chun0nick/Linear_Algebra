@@ -10,7 +10,7 @@ All of them are contained in all_ops.py.
 # 1. reducer(matrix)
 prints the matrix in readable reduced row echelon form and 
 returns the matrix in reduced row echelon form  
-Example:
+Example:  
 \>>> matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]  
 \>>> reduced = reducer(matrix)  
 [1.0, 0.0, -1.0]  
