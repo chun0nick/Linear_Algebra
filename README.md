@@ -1,4 +1,4 @@
-# Linear_Algebra
+# Linear Algebra
 Matricies are of the form [[row1],[row2],[row3]]  
 Example:  
 1 2 3  
