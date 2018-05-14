@@ -18,6 +18,7 @@ Example:
 [0.0, 0.0, 0.0]  
 \>>> reduced  
 [[1.0, 0.0, -1.0], [0.0, 1.0, 2.0], [0.0, 0.0, 0.0]]  
+\>>> reduced = reducer(matrix, True) # Will print steps  
 
 # 2. invert(matrix)
 Prints and returns the inverse of a matrix  
