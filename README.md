@@ -52,7 +52,6 @@ Example:
 [5, 4, 3]  
 \>>> multiplied  
 [[8, 7, 6],[23, 28, 33],[5, 4, 3]]  
-<<<<<<< HEAD
 
 # 5. orthogonal_basis(matrix, normalized=False)  
 returns an orthogonal basis for the matrix  
@@ -63,5 +62,3 @@ Example:
 [[1, 0.5, 0.5], [1, -0.5, 0.5], [1, -0.5, -0.5], [1, 0.5, -0.5]]  
 \>>> orthogonal_basis(matrix, True)  
 [[0.5, 0.5, 0.5], [0.5, -0.5, 0.5], [0.5, -0.5, -0.5], [0.5, 0.5, -0.5]]  
-=======
->>>>>>> e2c66d1636b1f17a408b2dfe1943a69d631ba222
