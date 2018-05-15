@@ -228,6 +228,56 @@ def row_to_column(matrix):
         column_matrix.append(new_column)
     return column_matrix
 
+def column_to_row(matrix):
+    copied_matrix = matrix[:]
+    all_columns = columns(copied_matrix)
+    row_matrix = []
+    for ind in range(all_columns):
+        new_row = []
+        for i in copied_matrix:
+            new_row.append(i[ind])
+        row_matrix.append(new_row)
+    return row_matrix
+
+def single_gram(vector, current_basis):
+    original_vector = vector[:]
+    for v in current_basis:
+        numerator = dot_product(original_vector, v)
+        denominator = dot_product(v, v)
+        scalar = -1 * numerator / denominator
+        gram_vector = scale_row(scalar, v)
+        vector = add_vector(gram_vector, vector)
+    return make_zero([round(i, 3) for i in vector])
+
+def orthogonal(matrix):
+    vector_matrix = row_to_column(matrix[:])
+    for ind, vector in enumerate(vector_matrix):
+        for other in vector_matrix[ind+1:]:
+            if not (0.05 >= dot_product(vector, other) >= -0.05):
+                return False
+    return True
+
+def gram_schmidt(matrix, normalized):
+    copy = row_to_column(matrix[:])
+    orthogonal_matrix = [copy[0][:]]
+    for vector in copy[1:]:
+        orthogonal_vector = single_gram(vector, orthogonal_matrix)
+        orthogonal_matrix.append(orthogonal_vector)
+    if normalized:
+        normalized_matrix = []
+        for vector in orthogonal_matrix:
+            normalized_matrix.append(normalize_vector(vector))
+        return column_to_row(normalized_matrix)
+    return column_to_row(orthogonal_matrix)
+
+def normalize_vector(vector):
+    scalar = dot_product(vector, vector) ** 0.5
+    return make_zero([round(i, 4) for i in scale_row(1 / scalar, vector)])
+
+
+a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+acon = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+
 def reducer_invert(matrix, steps=False):
     if not proper_structure(matrix):
         print("Matrix is malformed.")
@@ -258,6 +308,9 @@ def random_matrix_gen(m, n):
         random_new_matrix.append(row)
         row = []
     return random_new_matrix
+
+def add_vector(v1, v2):
+    return [x + y for x, y in zip(v1, v2)]
 
 # subtracts one row from another
 def sub_row(row1, row2):

@@ -7,7 +7,7 @@ Example:
 would be [[1, 2, 3],[4, 5, 6],[7, 8, 9]]  
 There are currently 4 functions.  
 All of them are contained in all_ops.py.    
-# 1. reducer(matrix)
+# 1. reducer(matrix, steps=False)  
 Prints and returns the matrix in reduced row echelon form  
 
 Example:  
@@ -18,7 +18,7 @@ Example:
 [0.0, 0.0, 0.0]  
 \>>> reduced  
 [[1.0, 0.0, -1.0], [0.0, 1.0, 2.0], [0.0, 0.0, 0.0]]  
-\>>> reduced = reducer(matrix, True) # Will print steps  
+\>>> reduced = reducer(matrix, True) # Would print steps  
 
 # 2. invert(matrix)
 Prints and returns the inverse of a matrix  
@@ -52,3 +52,13 @@ Example:
 [5, 4, 3]  
 \>>> multiplied  
 [[8, 7, 6],[23, 28, 33],[5, 4, 3]]  
+
+# 5. orthogonal_basis(matrix, normalized=False)  
+returns an orthogonal basis for the matrix  
+
+Example:  
+\>>> matrix = [[1, 1, 0],[1, 0, 2],[1, 0, 1],[1, 1, -1]]  
+\>>> orthogonal_basis(matrix)  
+[[1, 0.5, 0.5], [1, -0.5, 0.5], [1, -0.5, -0.5], [1, 0.5, -0.5]]  
+\>>> orthogonal_basis(matrix, True)  
+[[0.5, 0.5, 0.5], [0.5, -0.5, 0.5], [0.5, -0.5, -0.5], [0.5, 0.5, -0.5]]  

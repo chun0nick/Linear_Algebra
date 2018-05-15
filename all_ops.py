@@ -65,3 +65,10 @@ def multiply(matrix1, matrix2):
         result_matrix = round_matrix(multiplier(matrix1, matrix2))
         readable_matrix(result_matrix)
         return round_matrix(result_matrix)
+
+def orthogonal_basis(matrix, normalized=False):
+    copy = matrix[:]
+    if orthogonal(copy):
+        print("Matrix is already orthogonal.")
+        return copy
+    return gram_schmidt(copy, normalized)
