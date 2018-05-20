@@ -1,4 +1,6 @@
 from matrix_ops import *
+import numpy as np
+from eigen import *
 
 def reducer(matrix, steps=False):
     if not proper_structure(matrix):
@@ -72,3 +74,29 @@ def orthogonal_basis(matrix, normalized=False):
         print("Matrix is already orthogonal.")
         return copy
     return gram_schmidt(copy, normalized)
+
+def eigen_values(matrix):
+    copy = matrix[:]
+    copy = str_determinant(poly_matrix(subtract_variable(copy)))
+    eigen_vals = np.roots(clean_polynomial(copy))
+    real_roots = []
+    imaginary_roots = []
+    for i in range(len(eigen_vals)):
+        if np.isreal(eigen_vals[i]):
+            real_roots.append(eigen_vals[i])
+        else:
+            imaginary_roots.append(eigen_vals[i])
+    if len(real_roots) > 0:
+        print("Real eigen values are:")
+        for i in real_roots:
+            print(np.round(i, 4))
+    else:
+        print("There are no real eigen values")
+    if len(imaginary_roots) > 0:
+        print("Imaginary eigen values are:")
+        for i in imaginary_roots:
+            np.set_printoptions(precision=5)
+            print(np.round(i, 4))
+    else:
+        print("There are no imaginary eigen values")
+    return eigen_vals.tolist()
