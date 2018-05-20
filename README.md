@@ -62,3 +62,16 @@ Example:
 [[1, 0.5, 0.5], [1, -0.5, 0.5], [1, -0.5, -0.5], [1, 0.5, -0.5]]  
 \>>> orthogonal_basis(matrix, True)  
 [[0.5, 0.5, 0.5], [0.5, -0.5, 0.5], [0.5, -0.5, -0.5], [0.5, 0.5, -0.5]]  
+
+# 6. eigen_values(matrix)  
+returns eigen values of a matrix  
+
+Example:  
+\>>> matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]  
+\>>> eigen_vals = eigen_values(matrix)  
+Real eigen values are:  
+16.1168  
+-1.1168  
+There are no imaginary eigen values  
+\>>> eigen_vals  
+[16.116843969807043, -1.116843969807043]  
