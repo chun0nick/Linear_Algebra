@@ -5,7 +5,7 @@ Example:
 4 5 6  
 7 8 9  
 would be [[1, 2, 3],[4, 5, 6],[7, 8, 9]]  
-There are currently 4 functions.  
+There are currently 5 functions.  
 All of them are contained in all_ops.py.    
 # 1. reducer(matrix, steps=False)  
 Prints and returns the matrix in reduced row echelon form  
@@ -52,7 +52,6 @@ Example:
 [5, 4, 3]  
 \>>> multiplied  
 [[8, 7, 6],[23, 28, 33],[5, 4, 3]]  
-<<<<<<< HEAD
 
 # 5. orthogonal_basis(matrix, normalized=False)  
 returns an orthogonal basis for the matrix  
@@ -63,5 +62,3 @@ Example:
 [[1, 0.5, 0.5], [1, -0.5, 0.5], [1, -0.5, -0.5], [1, 0.5, -0.5]]  
 \>>> orthogonal_basis(matrix, True)  
 [[0.5, 0.5, 0.5], [0.5, -0.5, 0.5], [0.5, -0.5, -0.5], [0.5, 0.5, -0.5]]  
-=======
->>>>>>> e2c66d1636b1f17a408b2dfe1943a69d631ba222
