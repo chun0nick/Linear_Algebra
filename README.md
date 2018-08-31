@@ -5,7 +5,7 @@ Example:
 4 5 6  
 7 8 9  
 would be [[1, 2, 3],[4, 5, 6],[7, 8, 9]]  
-There are currently 5 functions.  
+There are currently 6 functions.  
 All of them are contained in all_ops.py.    
 # 1. reducer(matrix, steps=False)  
 Prints and returns the matrix in reduced row echelon form  
